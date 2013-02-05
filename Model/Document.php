@@ -40,6 +40,13 @@ class Document extends AbstractItem
     private $position;
 
     /**
+     * Documents
+     *
+     * @var array
+     */
+    private $documents = array();
+
+    /**
      * Language getter
      *
      * @return string
