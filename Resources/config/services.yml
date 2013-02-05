@@ -6,7 +6,7 @@ services:
       - '%universibo_campus.api.url%'
 
   universibo_campus.retriever.guzzle:
-    class: 'Universibo\Bundle\CampusBundle\Data\GuzzleRetriever'
+    class: 'Universibo\Bundle\CampusBundle\Data\GuzzleDataRetriever'
     public: false
     arguments:
       - '@universibo_campus.api.client'

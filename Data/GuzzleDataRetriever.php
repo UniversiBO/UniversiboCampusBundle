@@ -39,13 +39,22 @@ class GuzzleDataRetriever implements DataRetrieverInterface
      */
     public function retrieveActivityData($academicYear, $componentId) 
     {
-        $this
+        $request = $this
             ->client
-            ->get('lista', null, array (
-                'idComponenteAF'  => $academicYear,
-                'idComponenteAF' => $componentId,
-                'output'         => 'JSON'
-            ))
+            ->get('lista')
+        ;
+        
+        $query = $request->getQuery();
+        
+        $query
+            ->set('annoAccademico', $academicYear)
+            ->set('idComponenteAF', $componentId)
+            ->set('output', 'JSON')
+        ;
+        
+        return $request
+            ->send()
+            ->json()
         ;
     }
 }
