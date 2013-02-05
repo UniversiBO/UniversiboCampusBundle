@@ -44,9 +44,8 @@ class GuzzleDataRetriever implements DataRetrieverInterface
             ->get('lista')
         ;
         
-        $query = $request->getQuery();
-        
-        $query
+        $request
+            ->getQuery()
             ->set('annoAccademico', $academicYear)
             ->set('idComponenteAF', $componentId)
             ->set('output', 'JSON')
