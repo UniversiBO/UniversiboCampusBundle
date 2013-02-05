@@ -32,10 +32,11 @@ class GuzzleDataRetriever implements DataRetrieverInterface
     }
 
     /**
-     * Retriever
+     * Retrieves activity data
      *
      * @param integer $academicYear
      * @param integer $componentId
+     * @return array
      */
     public function retrieveActivityData($academicYear, $componentId)
     {
