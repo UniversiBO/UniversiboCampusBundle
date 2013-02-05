@@ -90,7 +90,7 @@ class DocumentSet extends AbstractItem
     public function setDocuments(array $documents)
     {
         $this->documents = $documents;
-        
+
         return $this;
     }
 }
