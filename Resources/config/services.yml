@@ -1,1 +1,6 @@
 services:
+  universibo_campus.api.client:
+    class: 'Guzzle\Http\Client'
+    public: false
+    arguments:
+      - '%universibo_campus.api.url%'
