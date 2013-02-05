@@ -10,20 +10,20 @@ use Guzzle\Http\Client;
 
 /**
  * Guzzle based data retriever
- * 
+ *
  * @author Davide Bellettini <davide.bellettini@gmail.com>
  */
 class GuzzleDataRetriever implements DataRetrieverInterface
 {
     /**
      * Guzzle Client
-     * @var Client 
+     * @var Client
      */
     private $client;
-    
+
     /**
      * Class constructor
-     * 
+     *
      * @param Client $client
      */
     public function __construct(Client $client)
@@ -33,24 +33,24 @@ class GuzzleDataRetriever implements DataRetrieverInterface
 
     /**
      * Retriever
-     * 
+     *
      * @param integer $academicYear
      * @param integer $componentId
      */
-    public function retrieveActivityData($academicYear, $componentId) 
+    public function retrieveActivityData($academicYear, $componentId)
     {
         $request = $this
             ->client
             ->get('lista')
         ;
-        
+
         $request
             ->getQuery()
             ->set('annoAccademico', $academicYear)
             ->set('idComponenteAF', $componentId)
             ->set('output', 'JSON')
         ;
-        
+
         return $request
             ->send()
             ->json()

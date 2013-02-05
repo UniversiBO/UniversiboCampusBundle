@@ -10,7 +10,7 @@ services:
     public: false
     arguments:
       - '@universibo_campus.api.client'
-      
+
   universibo_campus.api.facade:
     class: 'Universibo\Bundle\CampusBundle\API\CampusAPI'
     public: true

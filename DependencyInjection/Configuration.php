@@ -19,7 +19,7 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('universibo_campus');
-        
+
         $rootNode
             ->children()
                 ->arrayNode('api')
