@@ -1,0 +1,31 @@
+{
+    "name": "universibo/campus-bundle",
+    "type": "symfony-bundle",
+    "description": "UniversiBO CampusBundle",
+    "keywords": ["university","eprints","json"],
+    "homepage": "http://github.com/UniversiBO",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Davide Bellettini",
+            "email": "davide.bellettini@gmail.com"
+        },
+        {
+            "name": "UniversiboCampusBundle Contributors",
+            "homepage": "https://github.com/UniversiBO/UniversiboCampusBundle/graphs/contributors"
+        }
+    ],
+    "require": {
+        "symfony/framework-bundle": "2.1.*",
+        "guzzle/guzzle": "3.1.*"
+    },
+    "require-dev": {
+        "symfony/yaml": "2.1.*",
+        "symfony/class-loader": "2.1.*"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": { "Universibo\\Bundle\\CampusBundle": "" }
+    },
+    "target-dir": "Universibo/Bundle/CampusBundle"
+}
