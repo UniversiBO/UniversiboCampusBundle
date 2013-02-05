@@ -37,4 +37,26 @@ class FileTest extends AbstractItemTest
     {
         return $this->file;
     }
+
+    /**
+     * @dataProvider provider
+     * @param string $name
+     * @param mixed  $value
+     */
+    public function testAccessors($name, $value)
+    {
+        $this->accessorTest($name, $value);
+    }
+
+    public static function provider()
+    {
+        return array (
+            array('name', 'goofy.doc'),
+            array('size', 1024),
+            array('hashType', 'MD5'),
+            array('hash', '68b329da9893e34099c7d8ad5cb9c940'),
+            array('mimeType', 'text/plain'),
+            array('modifiedAt', new \DateTime()),
+        );
+    }
 }
