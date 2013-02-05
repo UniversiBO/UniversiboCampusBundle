@@ -11,6 +11,6 @@ namespace Universibo\Bundle\CampusBundle\Model;
  *
  * @author Davide Bellettini <davide.bellettini@gmail.com>
  */
-class DocumentSet
+class DocumentSet extends AbstractItem
 {
 }
