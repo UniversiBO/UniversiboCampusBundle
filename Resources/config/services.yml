@@ -4,3 +4,15 @@ services:
     public: false
     arguments:
       - '%universibo_campus.api.url%'
+
+  universibo_campus.retriever.guzzle:
+    class: 'Universibo\Bundle\CampusBundle\Data\GuzzleRetriever'
+    public: false
+    arguments:
+      - '@universibo_campus.api.client'
+      
+  universibo_campus.api.facade:
+    class: 'Universibo\Bundle\CampusBundle\API\CampusAPI'
+    public: true
+    arguments:
+      - '@universibo_campus.retriever.guzzle'
