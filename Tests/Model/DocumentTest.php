@@ -55,7 +55,8 @@ class DocumentTest extends AbstractItemTest
             array('revisionNumber', 3),
             array('security', 'studentsonly'),
             array('position', 2),
-            array('distributionList', 'claudio.sartori.Processi_E_Tecniche_DI_Data_Mining')
+            array('distributionList', 'claudio.sartori.Processi_E_Tecniche_DI_Data_Mining'),
+            array('files', array())
         );
     }
 }

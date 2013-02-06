@@ -20,6 +20,13 @@ class Document extends AbstractItem
     private $language;
 
     /**
+     * Files
+     *
+     * @var array
+     */
+    private $files = array();
+
+    /**
      * Revision number (e.g. 1, 2 ...)
      * @var integer
      */
@@ -65,6 +72,28 @@ class Document extends AbstractItem
     public function setLanguage($language)
     {
         $this->language = $language;
+
+        return $this;
+    }
+
+    /**
+     * Files getter
+     * @return array
+     */
+    public function getFiles()
+    {
+        return $this->files;
+    }
+
+    /**
+     * Files setter
+     *
+     * @param  array    $files
+     * @return Document
+     */
+    public function setFiles(array $files)
+    {
+        $this->files = $files;
 
         return $this;
     }
