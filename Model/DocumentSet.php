@@ -27,6 +27,13 @@ class DocumentSet extends AbstractItem
     private $revisionNumber;
 
     /**
+     * Documents
+     *
+     * @var array
+     */
+    private $documents = array();
+
+    /**
      * Title getter
      *
      * @return string
