@@ -23,7 +23,7 @@ interface PersonInterface
     /**
      * Given name setter
      *
-     * @param  string    $givenName
+     * @param  string          $givenName
      * @return PersonInterface
      */
     public function setGivenName($givenName);
@@ -38,7 +38,7 @@ interface PersonInterface
     /**
      * Family name setter
      *
-     * @param  string    $familyName
+     * @param  string          $familyName
      * @return PersonInterface
      */
     public function setFamilyName($familyName);

@@ -38,7 +38,7 @@ class Creator implements PersonInterface
     /**
      * Given name setter
      *
-     * @param  string    $givenName
+     * @param  string  $givenName
      * @return Creator
      */
     public function setGivenName($givenName)
@@ -61,7 +61,7 @@ class Creator implements PersonInterface
     /**
      * Family name setter
      *
-     * @param  string    $familyName
+     * @param  string  $familyName
      * @return Creator
      */
     public function setFamilyName($familyName)

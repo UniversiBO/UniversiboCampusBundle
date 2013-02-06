@@ -14,8 +14,8 @@ abstract class AbstractModelTest extends \PHPUnit_Framework_TestCase
     /**
      * @return object
      */
-    protected abstract function getModel();
-    
+    abstract protected function getModel();
+
     protected function accessorTest($name, $value)
     {
         $item = $this->getModel();
