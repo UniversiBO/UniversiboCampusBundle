@@ -73,8 +73,8 @@ class CampusAPI
     /**
      * Creates a document
      *
-     * @param  stdClass                                       $documentRaw
-     * @return \Universibo\Bundle\CampusBundle\Model\Document
+     * @param  stdClass $documentRaw
+     * @return Document
      */
     private function createDocument(stdClass $documentRaw)
     {
@@ -103,8 +103,8 @@ class CampusAPI
     /**
      * Creates a file
      *
-     * @param  stdClass                                   $fileRaw
-     * @return \Universibo\Bundle\CampusBundle\Model\File
+     * @param  stdClass $fileRaw
+     * @return File
      */
     private function createFile(stdClass $fileRaw)
     {
