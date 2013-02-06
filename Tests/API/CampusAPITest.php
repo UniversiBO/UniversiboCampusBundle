@@ -51,13 +51,7 @@ class CampusAPITest extends \PHPUnit_Framework_TestCase
 
     public function testDocumentSetFields()
     {
-        $this->prepareFullResult('sample01.json', $academicYear = 2012, $componentId=341470);
-
-        $result = $this->api->getActivityData($academicYear, $componentId);
-
-        $this->assertCount(1, $result);
-
-        list($item) = $result;
+        $item = $this->getFirstResult();
 
         $this->assertInstanceOf('\\Universibo\\Bundle\\CampusBundle\\Model\\DocumentSet', $item);
 
@@ -66,12 +60,10 @@ class CampusAPITest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(13, $item->getRevisionNumber());
         $this->assertEquals(new DateTime('2012-12-13 13:06:49'), $item->getModifiedAt());
     }
-
+    
     public function testDocuments()
     {
-        $this->prepareFullResult('sample01.json', $academicYear = 2012, $componentId=341470);
-        $result = $this->api->getActivityData($academicYear, $componentId);
-        list($documentSet) = $result;
+        $documentSet = $this->getFirstResult();
 
         $documents = $documentSet->getDocuments();
         $this->assertCount(1, $documents);
@@ -84,13 +76,35 @@ class CampusAPITest extends \PHPUnit_Framework_TestCase
         $this->assertSame(1, $document->getPosition());
         $this->assertEquals('claudio.sartori.Processi_E_Tecniche_DI_Data_Mining', $document->getDistributionList());
     }
+    
+    public function testCreators()
+    {
+        $documentSet = $this->getFirstResult();
+        $creators = $documentSet->getCreators();
+        
+        $this->assertCount(1, $creators);
+        list($creator) = $creators;
+        
+        $this->assertEquals('Simone', $creator->getGivenName());
+        $this->assertEquals('Vannicola', $creator->getFamilyName());
+    }
+    
+    public function testProfessors()
+    {
+        $documentSet = $this->getFirstResult();
+        $professors = $documentSet->getProfessors();
+        
+        $this->assertCount(1, $professors);
+        list($professor) = $professors;
+        
+        $this->assertSame('030315', $professor->getMatriculationNumber());
+        $this->assertEquals('Claudio', $professor->getGivenName());
+        $this->assertEquals('Sartori', $professor->getFamilyName());
+    }
 
     public function testFileFields()
     {
-        $this->prepareFullResult('sample01.json', $academicYear = 2012, $componentId=341470);
-
-        $result = $this->api->getActivityData($academicYear, $componentId);
-        list($documentSet) = $result;
+        $documentSet = $this->getFirstResult();
         list($document) = $documentSet->getDocuments();
         $files = $document->getFiles();
 
@@ -107,6 +121,21 @@ class CampusAPITest extends \PHPUnit_Framework_TestCase
         $this->assertSame('ffeed688a3236f28995ed3e982a2bf8a', $file->getHash());
         $this->assertSame('application/vnd.ms-office', $file->getMimeType());
         $this->assertEquals(new DateTime('2012-12-13 13:06:28'), $file->getModifiedAt());
+    }
+    
+    /**
+     * Returns the first result from sample file
+     * 
+     * @return DocumentSet
+     */
+    private function getFirstResult()
+    {
+        $this->prepareFullResult('sample01.json', $academicYear = 2012, $componentId=341470);
+
+        $result = $this->api->getActivityData($academicYear, $componentId);
+        $this->assertCount(1, $result);
+        
+        return $result[0];
     }
 
     private function prepareFullResult($filename, $academicYear, $componentId)
