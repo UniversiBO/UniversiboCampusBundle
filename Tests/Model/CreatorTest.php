@@ -6,36 +6,36 @@
  */
 namespace Universibo\Bundle\CampusBundle\Tests\Model;
 
-use Universibo\Bundle\CampusBundle\Model\DocumentSet;
+use Universibo\Bundle\CampusBundle\Model\Creator;
 /**
- * DocumentSet test suite
+ * Creator test suite
  *
  * @author Davide Bellettini <davide.bellettini@gmail.com>
  */
-class DocumentSetTest extends AbstractItemTest
+class CreatorTest extends AbstractModelTest
 {
     /**
      *
-     * @var DocumentSet
+     * @var Creator
      */
-    private $documentSet;
+    private $creator;
 
     /**
      * Setup
      */
     protected function setUp()
     {
-        $this->documentSet = new DocumentSet();
+        $this->creator = new Creator();
     }
 
     /**
      * Gets the item
      *
-     * @return DocumentSet
+     * @return Creator
      */
     protected function getModel()
     {
-        return $this->documentSet;
+        return $this->creator;
     }
 
     /**
@@ -51,10 +51,8 @@ class DocumentSetTest extends AbstractItemTest
     public static function provider()
     {
         return array (
-            array('title', 'Hello World!'),
-            array('revisionNumber', 3),
-            array('documents', array()),
-            array('modifiedAt', new \DateTime()),
+            array('givenName', 'Hawking'),
+            array('familyName', 'Stephen William'),
         );
     }
 }

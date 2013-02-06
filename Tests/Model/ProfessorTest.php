@@ -33,7 +33,7 @@ class ProfessorTest extends AbstractItemTest
      *
      * @return Professor
      */
-    protected function getItem()
+    protected function getModel()
     {
         return $this->professor;
     }

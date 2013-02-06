@@ -11,7 +11,7 @@ namespace Universibo\Bundle\CampusBundle\Model;
  *
  * @author Davide Bellettini <davide.bellettini@gmail.com>
  */
-class Professor extends AbstractItem implements PersonInterface
+class Creator implements PersonInterface
 {
     /**
      * Given name
@@ -24,12 +24,6 @@ class Professor extends AbstractItem implements PersonInterface
      * @var string
      */
     private $familyName;
-
-    /**
-     * Matriculation number
-     * @var string
-     */
-    private $matriculationNumber;
 
     /**
      * Given name getter
@@ -45,7 +39,7 @@ class Professor extends AbstractItem implements PersonInterface
      * Given name setter
      *
      * @param  string    $givenName
-     * @return Professor
+     * @return Creator
      */
     public function setGivenName($givenName)
     {
@@ -68,34 +62,11 @@ class Professor extends AbstractItem implements PersonInterface
      * Family name setter
      *
      * @param  string    $familyName
-     * @return Professor
+     * @return Creator
      */
     public function setFamilyName($familyName)
     {
         $this->familyName = $familyName;
-
-        return $this;
-    }
-
-    /**
-     * Matriculation number getter
-     *
-     * @return string
-     */
-    public function getMatriculationNumber()
-    {
-        return $this->matriculationNumber;
-    }
-
-    /**
-     * Matriculation number setter
-     *
-     * @param  string    $matriculationNumber
-     * @return Professor
-     */
-    public function setMatriculationNumber($matriculationNumber)
-    {
-        $this->matriculationNumber = $matriculationNumber;
 
         return $this;
     }

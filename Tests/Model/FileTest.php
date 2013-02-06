@@ -33,7 +33,7 @@ class FileTest extends AbstractItemTest
      *
      * @return File
      */
-    protected function getItem()
+    protected function getModel()
     {
         return $this->file;
     }

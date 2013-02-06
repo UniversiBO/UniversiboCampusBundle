@@ -33,7 +33,7 @@ class DocumentTest extends AbstractItemTest
      *
      * @return Document
      */
-    protected function getItem()
+    protected function getModel()
     {
         return $this->document;
     }
