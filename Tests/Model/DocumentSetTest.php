@@ -54,6 +54,8 @@ class DocumentSetTest extends AbstractItemTest
             array('title', 'Hello World!'),
             array('revisionNumber', 3),
             array('documents', array()),
+            array('creators', array()),
+            array('professors', array()),
             array('modifiedAt', new \DateTime()),
         );
     }

@@ -43,6 +43,20 @@ class DocumentSet extends AbstractItem
     private $documents = array();
 
     /**
+     * Creators
+     *
+     * @var array
+     */
+    private $creators = array();
+
+    /**
+     * Creators
+     *
+     * @var array
+     */
+    private $professors = array();
+
+    /**
      * Title getter
      *
      * @return string
@@ -128,6 +142,52 @@ class DocumentSet extends AbstractItem
     public function setDocuments(array $documents)
     {
         $this->documents = $documents;
+
+        return $this;
+    }
+
+    /**
+     * Creators getter
+     *
+     * @return array
+     */
+    public function getCreators()
+    {
+        return $this->creators;
+    }
+
+    /**
+     * Creators setter
+     *
+     * @param  array       $creators
+     * @return DocumentSet
+     */
+    public function setCreators($creators)
+    {
+        $this->creators = $creators;
+
+        return $this;
+    }
+
+    /**
+     * Professors getter
+     *
+     * @return array
+     */
+    public function getProfessors()
+    {
+        return $this->professors;
+    }
+
+    /**
+     * Professors setter
+     *
+     * @param  array       $professors
+     * @return DocumentSet
+     */
+    public function setProfessors($professors)
+    {
+        $this->professors = $professors;
 
         return $this;
     }
