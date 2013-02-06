@@ -11,6 +11,7 @@ use stdClass;
 use Universibo\Bundle\CampusBundle\Data\DataRetrieverInterface;
 use Universibo\Bundle\CampusBundle\Model\Document;
 use Universibo\Bundle\CampusBundle\Model\DocumentSet;
+use Universibo\Bundle\CampusBundle\Model\File;
 
 /**
  * AMS Campus API Façade
@@ -69,6 +70,12 @@ class CampusAPI
         return $documentSets;
     }
 
+    /**
+     * Creates a document
+     *
+     * @param  stdClass                                       $documentRaw
+     * @return \Universibo\Bundle\CampusBundle\Model\Document
+     */
     private function createDocument(stdClass $documentRaw)
     {
         $document = new Document();
@@ -82,6 +89,27 @@ class CampusAPI
             $document->setDistributionList($documentRaw->distribution_list);
         }
 
+        $files = array();
+
+        foreach ($documentRaw->files as $fileRaw) {
+            $files[]= $this->createFile($fileRaw);
+        }
+
+        $document->setFiles($files);
+
         return $document;
+    }
+
+    /**
+     * Creates a file
+     *
+     * @param  stdClass                                   $fileRaw
+     * @return \Universibo\Bundle\CampusBundle\Model\File
+     */
+    private function createFile(stdClass $fileRaw)
+    {
+        $file = new File();
+
+        return $file;
     }
 }

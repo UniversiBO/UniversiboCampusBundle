@@ -81,6 +81,19 @@ class CampusAPITest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('claudio.sartori.Processi_E_Tecniche_DI_Data_Mining', $document->getDistributionList());
     }
 
+    public function testFileFields()
+    {
+        $this->prepareFullResult('sample01.json', $academicYear = 2012, $componentId=341470);
+
+        $result = $this->api->getActivityData($academicYear, $componentId);
+        list($documentSet) = $result;
+        list($document) = $documentSet->getDocuments();
+        $files = $document->getFiles();
+
+        $this->assertEquals('array', gettype($files), 'gettype($files) must be array');
+        $this->assertCount(1, $files);
+    }
+
     private function prepareFullResult($filename, $academicYear, $componentId)
     {
         $file = __DIR__ . '/../Resources/data/'.$filename;
