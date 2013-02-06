@@ -30,4 +30,24 @@ class CampusAPI
     {
         $this->retriever = $retriever;
     }
+
+    /**
+     * Gets Activity Data
+     *
+     * @param  integer $academicYear
+     * @param  integer $componentId
+     * @return array
+     */
+    public function getActivityData($academicYear, $componentId)
+    {
+        $data = $this->retriever->retrieveActivityData($academicYear, $componentId);
+
+        $documentSets = array();
+
+        foreach ($data as $documentSetRaw) {
+
+        }
+
+        return $documentSets;
+    }
 }
