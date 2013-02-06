@@ -3,7 +3,7 @@ services:
     class: 'Guzzle\Http\Client'
     public: false
     arguments:
-      - '%universibo_campus.api.url%'
+      - '%universibo_campus.api.uri%'
 
   universibo_campus.retriever.guzzle:
     class: 'Universibo\Bundle\CampusBundle\Data\GuzzleDataRetriever'
