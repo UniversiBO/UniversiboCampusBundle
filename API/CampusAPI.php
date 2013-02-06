@@ -96,7 +96,7 @@ class CampusAPI
         }
 
         $document->setFiles($files);
-
+        
         return $document;
     }
 

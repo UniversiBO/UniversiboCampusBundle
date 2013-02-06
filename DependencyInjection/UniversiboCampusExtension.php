@@ -25,6 +25,6 @@ class UniversiboCampusExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
-        $container->setParameter('universibo_campus.api.url', $config['api']['url']);
+        $container->setParameter('universibo_campus.api.uri', $config['api']['uri']);
     }
 }

@@ -25,7 +25,7 @@ class Configuration implements ConfigurationInterface
                 ->arrayNode('api')
                     ->isRequired()
                     ->children()
-                        ->scalarNode('url')
+                        ->scalarNode('uri')
                             ->isRequired()
                             ->cannotBeEmpty()
                         ->end()

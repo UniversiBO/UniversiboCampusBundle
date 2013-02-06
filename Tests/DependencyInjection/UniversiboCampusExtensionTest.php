@@ -29,7 +29,7 @@ class UniversiboCampusExtensionTest extends \PHPUnit_Framework_TestCase
     {
         $loader = new UniversiboCampusExtension();
         $config = $this->getConfig();
-        unset($config['api']['url']);
+        unset($config['api']['uri']);
         $loader->load(array($config), new ContainerBuilder());
     }
 
@@ -37,7 +37,7 @@ class UniversiboCampusExtensionTest extends \PHPUnit_Framework_TestCase
     {
         $yaml = <<<EOF
 api:
-  url: http://test-website.org/
+  uri: http://test-website.org/
 EOF;
         $parser = new Parser();
 
