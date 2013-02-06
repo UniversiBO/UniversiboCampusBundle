@@ -1,0 +1,87 @@
+[
+    {
+        "eprintid": 86958,
+        "userid": 530,
+        "documents": [
+            {
+                "distribution_list": "claudio.sartori.Processi_E_Tecniche_DI_Data_Mining",
+                "language": "it",
+                "placement": 1,
+                "eprintid": 86958,
+                "files": [
+                    {
+                        "hash_type": "MD5",
+                        "mtime": "2012-12-13 13:06:28",
+                        "datasetid": "document",
+                        "fileid": 932182,
+                        "objectid": 241456,
+                        "uri": "http://campus.unibo.it/id/file/932182",
+                        "mime_type": "application/vnd.ms-office",
+                        "hash": "ffeed688a3236f28995ed3e982a2bf8a",
+                        "filesize": 4398080,
+                        "filename": "DataMining_Iconsulting.ppt"
+                    }
+                ],
+                "rev_number": 2,
+                "uri": "http://campus.unibo.it/id/document/241456",
+                "main": "DataMining_Iconsulting.ppt",
+                "mime_type": "application/vnd.ms-office",
+                "docid": 241456,
+                "format": "application/vnd.ms-powerpoint",
+                "security": "list",
+                "pos": 1,
+                "formatdesc": "Sistemi di Business Intelligence"
+            }
+        ],
+        "rev_number": 13,
+        "creators": [
+            {
+                "lineage": null,
+                "given": "Simone",
+                "honourific": null,
+                "family": "Vannicola"
+            }
+        ],
+        "dir": "disk0/00/08/69/58",
+        "lastmod": "2012-12-13 13:06:49",
+        "anno": 2012,
+        "metadata_visibility": "show",
+        "eprint_status": "archive",
+        "item_type": "slide",
+        "status_changed": "2012-12-13 13:06:49",
+        "datestamp": "2012-09-24 07:11:05",
+        "uri": "http://campus.unibo.it/id/eprint/86958",
+        "full_text_status": "restricted",
+        "title": "Testimonianza Iconsulting",
+        "type": "learning_item",
+        "docente": [
+            {
+                "matricola": 30315,
+                "name": {
+                    "lineage": null,
+                    "given": "Claudio",
+                    "honourific": null,
+                    "family": "Sartori"
+                }
+            }
+        ],
+        "corp_creators": [
+            "Iconsulting Srl"
+        ],
+        "insegnamenti": [
+            {
+                "codice_facolta": 21,
+                "idComponenteAF": 341470,
+                "denominazione_insegnamento": "PROCESSI E TECNICHE DI DATA MINING M",
+                "denominazione_cdl": "Ingegneria informatica",
+                "cfu": 6,
+                "denominazione_facolta": "Ingegneria",
+                "codice_cdl": 937,
+                "idMaster": 341470,
+                "codice_insegnamento": 35256,
+                "aa": 2012
+            }
+        ],
+        "institution": "alma"
+    }
+]
