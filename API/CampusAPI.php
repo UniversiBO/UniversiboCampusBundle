@@ -109,6 +109,14 @@ class CampusAPI
     private function createFile(stdClass $fileRaw)
     {
         $file = new File();
+        
+        $file->setName($fileRaw->filename);
+        $file->setUri($fileRaw->uri);
+        $file->setSize($fileRaw->filesize);
+        $file->setHashType($fileRaw->hash_type);
+        $file->setHash($fileRaw->hash);
+        $file->setMimeType($fileRaw->mime_type);
+        $file->setModifiedAt(new DateTime($fileRaw->mtime));
 
         return $file;
     }

@@ -6,20 +6,24 @@
  */
 namespace Universibo\Bundle\CampusBundle\Tests\Model;
 
+use DateTime;
+use Universibo\Bundle\CampusBundle\API\CampusAPI;
+use Universibo\Bundle\CampusBundle\Data\DataRetrieverInterface;
+
 /**
  * CampusAPI test suite
  */
 class CampusAPITest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \Universibo\Bundle\CampusBundle\Data\DataRetrieverInterface
+     * @var DataRetrieverInterface
      */
     private $retriever;
 
     /**
      * API
      *
-     * @var \Universibo\Bundle\CampusBundle\API\CampusAPI
+     * @var CampusAPI
      */
     private $api;
 
@@ -29,7 +33,7 @@ class CampusAPITest extends \PHPUnit_Framework_TestCase
             ->getMock('\\Universibo\\Bundle\\CampusBundle\\Data\\DataRetrieverInterface')
         ;
 
-        $this->api = new \Universibo\Bundle\CampusBundle\API\CampusAPI($this->retriever);
+        $this->api = new CampusAPI($this->retriever);
     }
 
     public function testArrayReturnsArray()
@@ -60,7 +64,7 @@ class CampusAPITest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('http://campus.unibo.it/id/eprint/86958', $item->getUri());
         $this->assertEquals('Testimonianza Iconsulting', $item->getTitle());
         $this->assertEquals(13, $item->getRevisionNumber());
-        $this->assertEquals(new \DateTime('2012-12-13 13:06:49'), $item->getModifiedAt());
+        $this->assertEquals(new DateTime('2012-12-13 13:06:49'), $item->getModifiedAt());
     }
 
     public function testDocuments()
@@ -92,6 +96,17 @@ class CampusAPITest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals('array', gettype($files), 'gettype($files) must be array');
         $this->assertCount(1, $files);
+        
+        list($file) = $files;
+        $this->assertInstanceOf('\\Universibo\\Bundle\\CampusBundle\\Model\\File', $file);
+        
+        $this->assertSame('DataMining_Iconsulting.ppt', $file->getName(), 'File name must match');
+        $this->assertSame('http://campus.unibo.it/id/file/932182', $file->getUri());
+        $this->assertSame(4398080, $file->getSize(), 'File size must match');
+        $this->assertSame('MD5', $file->getHashType());
+        $this->assertSame('ffeed688a3236f28995ed3e982a2bf8a', $file->getHash());
+        $this->assertSame('application/vnd.ms-office', $file->getMimeType());
+        $this->assertEquals(new DateTime('2012-12-13 13:06:28'), $file->getModifiedAt());
     }
 
     private function prepareFullResult($filename, $academicYear, $componentId)
