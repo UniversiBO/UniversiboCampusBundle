@@ -96,10 +96,10 @@ class CampusAPITest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals('array', gettype($files), 'gettype($files) must be array');
         $this->assertCount(1, $files);
-        
+
         list($file) = $files;
         $this->assertInstanceOf('\\Universibo\\Bundle\\CampusBundle\\Model\\File', $file);
-        
+
         $this->assertSame('DataMining_Iconsulting.ppt', $file->getName(), 'File name must match');
         $this->assertSame('http://campus.unibo.it/id/file/932182', $file->getUri());
         $this->assertSame(4398080, $file->getSize(), 'File size must match');
