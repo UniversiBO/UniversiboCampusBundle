@@ -33,6 +33,13 @@ class Document extends AbstractItem
     private $security;
 
     /**
+     * If security is list, the name of the list the document is restricted to
+     *
+     * @var string
+     */
+    private $distributionList;
+
+    /**
      * Ordering position
      *
      * @var integer
@@ -104,6 +111,29 @@ class Document extends AbstractItem
     public function setSecurity($security)
     {
         $this->security = $security;
+
+        return $this;
+    }
+
+    /**
+     * Distribution list getter
+     *
+     * @return string
+     */
+    public function getDistributionList()
+    {
+        return $this->distributionList;
+    }
+
+    /**
+     * Distribution list setter
+     *
+     * @param  string   $distributionList
+     * @return Document
+     */
+    public function setDistributionList($distributionList)
+    {
+        $this->distributionList = $distributionList;
 
         return $this;
     }

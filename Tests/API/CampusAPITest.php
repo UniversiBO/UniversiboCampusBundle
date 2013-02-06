@@ -78,6 +78,7 @@ class CampusAPITest extends \PHPUnit_Framework_TestCase
         $this->assertSame(2, $document->getRevisionNumber());
         $this->assertEquals('list', $document->getSecurity());
         $this->assertSame(1, $document->getPosition());
+        $this->assertEquals('claudio.sartori.Processi_E_Tecniche_DI_Data_Mining', $document->getDistributionList());
     }
 
     private function prepareFullResult($filename, $academicYear, $componentId)

@@ -78,6 +78,10 @@ class CampusAPI
         $document->setRevisionNumber($documentRaw->rev_number);
         $document->setPosition($documentRaw->pos);
 
+        if ('list' === $document->getSecurity()) {
+            $document->setDistributionList($documentRaw->distribution_list);
+        }
+
         return $document;
     }
 }
