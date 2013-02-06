@@ -21,7 +21,7 @@ class UniversiboCampusExtensionTest extends \PHPUnit_Framework_TestCase
         $config = $this->getConfig();
         $loader->load(array($config), new ContainerBuilder());
     }
-    
+
     /**
      * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
      */
