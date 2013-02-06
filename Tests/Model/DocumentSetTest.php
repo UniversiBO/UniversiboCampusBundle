@@ -53,7 +53,8 @@ class DocumentSetTest extends AbstractItemTest
         return array (
             array('title', 'Hello World!'),
             array('revisionNumber', 3),
-            array('documents', array())
+            array('documents', array()),
+            array('modifiedAt', new \DateTime()),
         );
     }
 }

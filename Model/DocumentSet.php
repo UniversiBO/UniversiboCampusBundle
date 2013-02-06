@@ -6,6 +6,8 @@
  */
 namespace Universibo\Bundle\CampusBundle\Model;
 
+use DateTime;
+
 /**
  * Represents a Document set
  *
@@ -25,6 +27,13 @@ class DocumentSet extends AbstractItem
      * @var integer
      */
     private $revisionNumber;
+
+    /**
+     * Modified at date
+     *
+     * @var DateTime
+     */
+    private $modifiedAt;
 
     /**
      * Documents
@@ -75,6 +84,28 @@ class DocumentSet extends AbstractItem
     public function setRevisionNumber($revisionNumber)
     {
         $this->revisionNumber = $revisionNumber;
+
+        return $this;
+    }
+
+    /**
+     * Modification date getter
+     * @return DateTime
+     */
+    public function getModifiedAt()
+    {
+        return $this->modifiedAt;
+    }
+
+    /**
+     * Modification date setter
+     *
+     * @param  DateTime    $modifiedAt
+     * @return DocumentSet
+     */
+    public function setModifiedAt(DateTime $modifiedAt = null)
+    {
+        $this->modifiedAt = $modifiedAt;
 
         return $this;
     }
