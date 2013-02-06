@@ -67,25 +67,25 @@ class CampusAPI
             }
 
             $documentSet->setDocuments($documents);
-            
+
             $creators = array();
             foreach ($documentSetRaw->creators as $creatorRaw) {
                 $person = new Creator();
                 $this->setPersonFields($person, $creatorRaw);
                 $creators[] = $person;
             }
-            
+
             $documentSet->setCreators($creators);
-            
+
             $professors = array();
             foreach ($documentSetRaw->docente as $professorRaw) {
                 $person = new Professor();
-                
+
                 $this->setPersonFields($person, $professorRaw->name);
                 $person->setMatriculationNumber(sprintf('%06d', $professorRaw->matricola));
                 $professors[] = $person;
             }
-            
+
             $documentSet->setProfessors($professors);
 
             $documentSets[] = $documentSet;
@@ -117,8 +117,8 @@ class CampusAPI
 
         foreach ($documentRaw->files as $fileRaw) {
             $files[]= $this->createFile($fileRaw);
-        }        
-        
+        }
+
         $document->setFiles($files);
 
         return $document;
@@ -144,12 +144,12 @@ class CampusAPI
 
         return $file;
     }
-    
+
     /**
      * Sets person fields
-     * 
+     *
      * @param PersonInterface $person
-     * @param stdClass $personRaw
+     * @param stdClass        $personRaw
      */
     private function setPersonFields(PersonInterface $person, stdClass $personRaw)
     {

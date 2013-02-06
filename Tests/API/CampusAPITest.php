@@ -60,7 +60,7 @@ class CampusAPITest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(13, $item->getRevisionNumber());
         $this->assertEquals(new DateTime('2012-12-13 13:06:49'), $item->getModifiedAt());
     }
-    
+
     public function testDocuments()
     {
         $documentSet = $this->getFirstResult();
@@ -76,27 +76,27 @@ class CampusAPITest extends \PHPUnit_Framework_TestCase
         $this->assertSame(1, $document->getPosition());
         $this->assertEquals('claudio.sartori.Processi_E_Tecniche_DI_Data_Mining', $document->getDistributionList());
     }
-    
+
     public function testCreators()
     {
         $documentSet = $this->getFirstResult();
         $creators = $documentSet->getCreators();
-        
+
         $this->assertCount(1, $creators);
         list($creator) = $creators;
-        
+
         $this->assertEquals('Simone', $creator->getGivenName());
         $this->assertEquals('Vannicola', $creator->getFamilyName());
     }
-    
+
     public function testProfessors()
     {
         $documentSet = $this->getFirstResult();
         $professors = $documentSet->getProfessors();
-        
+
         $this->assertCount(1, $professors);
         list($professor) = $professors;
-        
+
         $this->assertSame('030315', $professor->getMatriculationNumber());
         $this->assertEquals('Claudio', $professor->getGivenName());
         $this->assertEquals('Sartori', $professor->getFamilyName());
@@ -122,10 +122,10 @@ class CampusAPITest extends \PHPUnit_Framework_TestCase
         $this->assertSame('application/vnd.ms-office', $file->getMimeType());
         $this->assertEquals(new DateTime('2012-12-13 13:06:28'), $file->getModifiedAt());
     }
-    
+
     /**
      * Returns the first result from sample file
-     * 
+     *
      * @return DocumentSet
      */
     private function getFirstResult()
@@ -134,7 +134,7 @@ class CampusAPITest extends \PHPUnit_Framework_TestCase
 
         $result = $this->api->getActivityData($academicYear, $componentId);
         $this->assertCount(1, $result);
-        
+
         return $result[0];
     }
 
