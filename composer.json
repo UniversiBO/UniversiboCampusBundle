@@ -2,7 +2,11 @@
     "name": "universibo/campus-bundle",
     "type": "symfony-bundle",
     "description": "UniversiBO CampusBundle",
-    "keywords": ["university","eprints","json"],
+    "keywords": [
+        "university",
+        "eprints",
+        "json"
+    ],
     "homepage": "http://github.com/UniversiBO",
     "license": "GPL",
     "authors": [
@@ -25,7 +29,9 @@
     },
     "minimum-stability": "dev",
     "autoload": {
-        "psr-0": { "Universibo\\Bundle\\CampusBundle": "" }
+        "psr-0": {
+            "Universibo\\Bundle\\CampusBundle": ""
+        }
     },
     "target-dir": "Universibo/Bundle/CampusBundle"
 }
